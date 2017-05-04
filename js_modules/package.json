@@ -2,7 +2,7 @@
   "name": "js_modules",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "build": "node_modules/.bin/webpack"
   },
@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "webpack": "^2.4.1"
   }
 }

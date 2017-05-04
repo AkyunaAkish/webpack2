@@ -68,41 +68,43 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const add = (num1, num2) => num1 + num2;
-/* harmony export (immutable) */ __webpack_exports__["a"] = add;
 
 
-const subtract = (num1, num2) => num1 - num2;
-/* harmony export (immutable) */ __webpack_exports__["b"] = subtract;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var add = exports.add = function add(num1, num2) {
+  return num1 + num2;
+};
 
+var subtract = exports.subtract = function subtract(num1, num2) {
+  return num1 - num2;
+};
 
-const multiply = (num1, num2) => num1 * num2;
-/* harmony export (immutable) */ __webpack_exports__["c"] = multiply;
+var multiply = exports.multiply = function multiply(num1, num2) {
+  return num1 * num2;
+};
 
-
-const divide = (num1, num2) => num1 / num2;
-/* harmony export (immutable) */ __webpack_exports__["d"] = divide;
-
-
-
+var divide = exports.divide = function divide(num1, num2) {
+  return num1 / num2;
+};
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math_js__ = __webpack_require__(0);
 
 
-console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__math_js__["a" /* add */])(1,1));
-console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__math_js__["b" /* subtract */])(1,1));
-console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__math_js__["c" /* multiply */])(10,10));
-console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__math_js__["d" /* divide */])(10,5));
+var _math = __webpack_require__(0);
 
+console.log((0, _math.add)(1, 1));
+console.log((0, _math.subtract)(1, 1));
+console.log((0, _math.multiply)(10, 10));
+console.log((0, _math.divide)(10, 5));
 
 /***/ })
 /******/ ]);
