@@ -1,4 +1,5 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: {
@@ -6,18 +7,37 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: 'dist/'
     },
     module: {
         rules: [{
-            test: /\.js/,
-            exclude: /(node_modules | bower_components)/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015', 'stage-1']
+                use: 'babel-loader',
+                test: /\.js$/
+            },
+            {
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader'
+                }),
+                test: /\.css$/
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [{
+                        loader: 'url-loader',
+                        options: {
+                            limit: 40000
+                        }
+                    },
+                    'image-webpack-loader?bypassOnDebug'
+                ]
             }
-        }]
+        ]
     },
+    plugins: [
+        new ExtractTextPlugin('style.css')
+    ],
     resolve: {
         extensions: ['.js']
     }
